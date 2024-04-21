@@ -1,0 +1,25 @@
+{
+  "name": "react-express-trpc",
+  "workspaces": [
+    "client",
+    "backend"
+  ],
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:backend": "npm run dev --workspace=backend",
+    "build:backend": "npm run build --workspace=backend",
+    "dev:client": "npm run dev --workspace=client",
+    "build:client": "npm run build --workspace=client",
+    "start": "npm run build:client && npm run build:backend && npm run start --workspace=backend",
+    "dev": "concurrently \"npm run dev:client\"  \"npm run dev:backend\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
